@@ -1,10 +1,13 @@
+import { Component } from "react";
 import TabButton from "./TabButton";
 import "./styles.css";
 
 export default function App() {
-     function handleSelect(){
-     console.log("hellow world --selected")
-    } 
+     function handleSelect(selectedButton){
+      // so far we did console log but now we need to 
+      //display the UI changes  
+     console.log(selectedButton);
+     }
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
@@ -12,9 +15,9 @@ export default function App() {
      
     <section>
         <menu>
-        <TabButton onSelect={handleSelect} >basil</TabButton>
-        <TabButton onSelect={handleSelect}>fun</TabButton>
-        <TabButton onSelect={handleSelect}>alukkail</TabButton>
+        <TabButton onSelect={()=>handleSelect('basil')} >basil</TabButton>
+        <TabButton onSelect={()=>handleSelect('sunny')}>sunny</TabButton>
+        <TabButton onSelect={()=>handleSelect('alukka')}>alukka</TabButton>
         </menu>
         Dynamic Content
     </section>
